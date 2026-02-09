@@ -18,17 +18,15 @@ body{
   text-align:center;
 }
 
-/* LOGO */
+/* LOGO NA VRHU */
 .logo{
-  margin:40px 0 20px;
+  margin:30px 0 10px;
   font-size:42px;
   font-weight:700;
   letter-spacing:2px;
   animation:logoFloat 4s ease-in-out infinite, logoGlow 3s ease-in-out infinite alternate;
 }
-.logo span{
-  color:#ff4d8d;
-}
+.logo span{color:#ff4d8d}
 
 @keyframes logoFloat{
   0%{transform:translateY(0)}
@@ -40,6 +38,37 @@ body{
   to{text-shadow:0 0 25px #ff4d8d}
 }
 
+/* HERO SEKCIJA */
+.hero{
+  padding:40px 20px 60px;
+  animation:fadeUp 1.2s ease;
+}
+.hero h1{
+  font-size:38px;
+  margin-bottom:15px;
+}
+.hero p{
+  max-width:650px;
+  margin:0 auto 30px;
+  font-size:18px;
+  opacity:.9;
+}
+.hero a{
+  display:inline-block;
+  padding:14px 34px;
+  background:#ff4d8d;
+  color:#fff;
+  text-decoration:none;
+  border-radius:40px;
+  font-weight:600;
+  animation:pulse 2.5s infinite;
+}
+
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(30px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
 /* CONTAINER */
 .container{
   max-width:1100px;
@@ -47,12 +76,12 @@ body{
   padding:20px;
 }
 
-/* CARDS */
+/* KARTICE */
 .cards{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:25px;
-  margin-top:30px;
+  margin-top:20px;
 }
 .card{
   position:relative;
@@ -63,11 +92,8 @@ body{
   transition:.4s;
   overflow:hidden;
 }
-.card:hover{
-  transform:translateY(-10px);
-}
+.card:hover{transform:translateY(-10px)}
 
-/* GLOW EFFECT */
 .card::before{
   content:"";
   position:absolute;
@@ -76,11 +102,9 @@ body{
   opacity:0;
   transition:.4s;
 }
-.card:hover::before{
-  opacity:.25;
-}
+.card:hover::before{opacity:.25}
 
-/* ICON */
+/* IKONICE */
 .icon{
   font-size:55px;
   margin-bottom:15px;
@@ -96,7 +120,7 @@ body{
   transition:.4s;
 }
 
-/* BUTTON */
+/* DUGME */
 .card a{
   display:inline-block;
   margin-top:20px;
@@ -108,9 +132,7 @@ body{
   font-weight:600;
   animation:pulse 2.5s infinite;
 }
-.card:hover a{
-  animation:none;
-}
+.card:hover a{animation:none}
 
 @keyframes pulse{
   0%{box-shadow:0 0 0 0 rgba(255,77,141,.6)}
@@ -118,7 +140,6 @@ body{
   100%{box-shadow:0 0 0 0 rgba(255,77,141,0)}
 }
 
-/* FOOTER */
 footer{
   margin:40px 0 20px;
   font-size:14px;
@@ -133,28 +154,36 @@ footer{
   Balkan <span>Media</span>
 </div>
 
-<div class="container">
+<section class="hero">
+  <h1>Balkan Media</h1>
+  <p>
+    Sve najbolje aplikacije, alati i tutorijali na jednom mestu.<br>
+    Brzo • Jednostavno • Besplatno
+  </p>
+  <a href="#apps">Preuzmi aplikacije</a>
+</section>
 
+<div class="container" id="apps">
   <div class="cards">
 
     <div class="card">
       <div class="icon"><i class="fab fa-android"></i></div>
       <h2>Android App</h2>
-      <p>Preuzmite Android aplikaciju brzo i jednostavno.</p>
+      <p>Brzo preuzimanje Android aplikacije.</p>
       <a href="#">Preuzmi</a>
     </div>
 
     <div class="card">
       <div class="icon"><i class="fab fa-apple"></i></div>
       <h2>iOS App</h2>
-      <p>Optimizovana aplikacija za iPhone uređaje.</p>
+      <p>Optimizovana verzija za iPhone.</p>
       <a href="#">Preuzmi</a>
     </div>
 
     <div class="card">
       <div class="icon"><i class="fab fa-windows"></i></div>
       <h2>Windows App</h2>
-      <p>Desktop verzija za Windows računare.</p>
+      <p>Desktop aplikacija za Windows.</p>
       <a href="#">Preuzmi</a>
     </div>
 
