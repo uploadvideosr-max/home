@@ -17,21 +17,37 @@ body{
   color:#fff;
 }
 
-/* LOGO */
+/* LOGO ANIMATION */
+@keyframes shine{
+  0%{background-position:-200%}
+  100%{background-position:200%}
+}
+@keyframes float{
+  0%{transform:translateY(0)}
+  50%{transform:translateY(-6px)}
+  100%{transform:translateY(0)}
+}
+
 .logo{
   position:fixed;
   top:20px;
-  right:20px;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:26px;
   font-weight:700;
-  letter-spacing:1px;
-  color:#ff4d8d;
+  letter-spacing:2px;
+  background:linear-gradient(90deg,#ff4d8d,#ffffff,#ff4d8d);
+  background-size:200%;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  animation:shine 5s linear infinite, float 3s ease-in-out infinite;
   z-index:1000;
 }
 
 /* HERO */
 .hero{
   text-align:center;
-  padding:120px 20px 90px;
+  padding:140px 20px 90px;
 }
 .hero h1{font-size:50px;margin-bottom:15px}
 .hero p{
@@ -79,7 +95,7 @@ body{
   background:rgba(255,255,255,.14);
 }
 
-/* GLOW EFFECT */
+/* GLOW */
 .card::before{
   content:"";
   position:absolute;
@@ -88,18 +104,10 @@ body{
   background:linear-gradient(120deg,transparent,#ff4d8d,transparent);
   opacity:0;
   transition:.4s;
-  pointer-events:none;
 }
-.card:hover::before{
-  opacity:.25;
-}
+.card:hover::before{opacity:.25}
 
-/* FLOAT ICON */
-@keyframes float{
-  0%{transform:translateY(0)}
-  50%{transform:translateY(-8px)}
-  100%{transform:translateY(0)}
-}
+/* ICON FLOAT */
 .icon{
   font-size:50px;
   margin-bottom:20px;
@@ -111,11 +119,7 @@ body{
 
 /* TEXT */
 .card h3{margin:10px 0}
-.card p{
-  font-size:14px;
-  opacity:.85;
-  min-height:38px;
-}
+.card p{font-size:14px;opacity:.85}
 
 /* PULSE BUTTON */
 @keyframes pulse{
@@ -134,9 +138,7 @@ body{
   font-size:14px;
   animation:pulse 2.5s infinite;
 }
-.card a i{margin-right:8px}
 .card:hover a{animation:none}
-.card a:hover{background:#ff2f78}
 
 /* BADGE */
 .badge{
@@ -158,23 +160,20 @@ footer{
   text-align:center;
   padding:35px 15px;
 }
-footer .social a{
-  color:#fff;
-  margin:0 10px;
-  font-size:20px;
-}
 footer span{color:#ff4d8d;font-weight:600}
 
 /* MOBILE */
 @media(max-width:600px){
   .hero h1{font-size:36px}
+  .logo{font-size:20px}
 }
 </style>
 </head>
 
 <body>
 
-<div class="logo">Balkan Media</div>
+<!-- LOGO -->
+<div class="logo">BALKAN MEDIA</div>
 
 <section class="hero">
   <h1>Balkan Media</h1>
@@ -213,11 +212,6 @@ footer span{color:#ff4d8d;font-weight:600}
 </section>
 
 <footer>
-  <div class="social">
-    <a href="#"><i class="fab fa-youtube"></i></a>
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-facebook"></i></a>
-  </div>
   <p>© 2026 <span>Balkan Media</span> • Aplikacije & tutorijali</p>
 </footer>
 
